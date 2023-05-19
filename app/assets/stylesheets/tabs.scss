@@ -1,0 +1,19 @@
+@import 'variables';
+
+.tabs {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 26px;
+  line-height: 100%;
+  align: left;
+  vertical-align: top;
+
+  &_item {
+    padding: 16px 0px;
+    width: 100%;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
