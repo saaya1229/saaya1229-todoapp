@@ -14,9 +14,13 @@
         <div class="card_content">
           <div class="card_title">
             <%= article.title %>
-          <div class="card_heart">
-            <%= image_tag 'Combined Shape.png' %>
-          </div>
+              <div class="card_heart dropdown">
+                <%= image_tag 'Combined Shape.png', class: 'dropbtn' %>
+                <div class="dropdown-content">
+                  <a href="#">Edit</a>
+                  <a href="#">Delete</a>
+                </div>
+            </div>
           </div>
           <div class="card_detail">
             <%= image_tag 'default-avatar.png' %>
@@ -28,5 +32,15 @@
         </div>
       </div>
     <% end %>
+  <% end %>
+  <%= link_to new_article_path do %>
+    <div class="float_btn">
+      <i class="fa fa-plus"></i>
+    </div>
+    <div class="card">
+      <div class="card_content add_card">
+        <p>+ Add new board</p>
+      </div>
+    </div>
   <% end %>
 </div>
