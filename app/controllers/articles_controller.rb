@@ -14,10 +14,24 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
-      redirect_to article_path(@article), notice: 'Saved!!'
+      redirect_to article_path(@article), notice: 'Saved!! ;)'
     else
-      flash.now[:error] = 'Failed to save'
+      flash.now[:error] = 'Failed to save :('
       render :new
+    end
+  end
+
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  def update
+    @article = Article.find(params[:id])
+    if @article.update(article_params)
+      redirect_to article_path(@article), notice: 'Updated!! ;)'
+    else
+      flash.now[:error] = 'Faild to update :('
+      render :edit
     end
   end
 

@@ -16,8 +16,10 @@
             <%= article.title %>
               <div class="card_heart dropdown">
                 <%= image_tag 'Combined Shape.png', class: 'dropbtn' %>
-                <div class="dropdown-content">
-                  <a href="#">Edit</a>
+                <div class="dropdown-content mini">
+                 <%= link_to edit_article_path(id: article.id) do %>
+                    <p>Edit</p>
+                 <% end %>
                   <a href="#">Delete</a>
                 </div>
             </div>
