@@ -20,7 +20,7 @@
                  <%= link_to edit_article_path(id: article.id) do %>
                     <p>Edit</p>
                  <% end %>
-                  <a href="#">Delete</a>
+                  <%= link_to 'Delete', article_path(id: article.id), data: { method: 'delete', confirm: 'Are you sure to delete this board?' } %>
                 </div>
             </div>
           </div>
