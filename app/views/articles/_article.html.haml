@@ -5,7 +5,7 @@
     .card_content
       .card_title
         = article.title
-        -if user_signed_in?
+        -if user_signed_in? && current_user.has_written?(article)
           .card_heart.dropdown
             = image_tag 'Combined Shape.png', class: 'dropbtn'
             .dropdown-content.mini
