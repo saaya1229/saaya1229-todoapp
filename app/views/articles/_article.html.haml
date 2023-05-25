@@ -5,12 +5,13 @@
     .card_content
       .card_title
         = article.title
-        .card_heart.dropdown
-          = image_tag 'Combined Shape.png', class: 'dropbtn'
-          .dropdown-content.mini
-            = link_to edit_article_path(id: article.id) do
-              %p Edit
-            = link_to 'Delete', article_path(id: article.id), data: { method: 'delete', confirm: 'Are you sure to delete this board?' }
+        -if user_signed_in?
+          .card_heart.dropdown
+            = image_tag 'Combined Shape.png', class: 'dropbtn'
+            .dropdown-content.mini
+              = link_to edit_article_path(id: article.id) do
+                %p Edit
+              = link_to 'Delete', article_path(id: article.id), data: { method: 'delete', confirm: 'Are you sure to delete this board?' }
       .card_detail
         = image_tag 'default-avatar.png'
         %div
