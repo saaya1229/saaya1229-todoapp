@@ -7,6 +7,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @tasks = Task.all
   end
 
   def new

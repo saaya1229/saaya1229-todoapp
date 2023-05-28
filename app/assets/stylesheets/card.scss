@@ -24,6 +24,7 @@ $avatar-size: 32px;
     }
   }
 
+
   &_detail {
     padding-top: 12px;
     cursor: pointer;
@@ -35,6 +36,23 @@ $avatar-size: 32px;
       height: $avatar-size;
       border-radius: 100%;
       margin-right: 8px;
+    }
+  }
+
+  &_comment {
+    display: flex;
+    justify-content: flex-end;
+    right: 24px;
+    img {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+
+    span {
+      margin-left: 8px;
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.25);
     }
   }
 

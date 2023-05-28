@@ -7,3 +7,18 @@
       %p= @article.display_created_at
   .article_content
     = @article.content
+  - @tasks.each do |task|
+    .card
+      .card_image
+        = image_tag 'eyecatch1.png'
+      .card_content
+        .card_title
+          = task.title
+        .card_comment
+          %span 23
+          = image_tag 'message-square-outline.png'
+        .card_detail
+          = image_tag 'default-avatar.png'
+  .card
+    .card_content.add_card
+      %p + Add new card
