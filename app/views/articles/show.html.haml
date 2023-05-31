@@ -19,6 +19,7 @@
           = image_tag 'message-square-outline.png'
         .card_detail
           = image_tag 'default-avatar.png'
-  .card
-    .card_content.add_card
-      %p + Add new card
+  = link_to new_article_path do
+    .card
+      .card_content.add_card
+        %p + Add new card
