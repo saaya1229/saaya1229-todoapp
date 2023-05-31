@@ -14,12 +14,14 @@
       .card_content
         .card_title
           = task.title
+        .card_content
+          = task.content
         .card_comment
           %span 23
           = image_tag 'message-square-outline.png'
         .card_detail
           = image_tag 'default-avatar.png'
-  = link_to new_article_path do
+  = link_to new_article_task_path(@article) do
     .card
       .card_content.add_card
         %p + Add new card
