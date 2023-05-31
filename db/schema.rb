@@ -27,11 +27,13 @@ ActiveRecord::Schema.define(version: 2023_05_28_064751) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.string "title"
-    t.text "content"
+    t.bigint "article_id", null: false
+    t.string "title", null: false
+    t.text "content", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
+    t.index ["article_id"], name: "index_tasks_on_article_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
