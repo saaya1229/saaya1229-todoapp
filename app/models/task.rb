@@ -27,4 +27,12 @@ class Task < ApplicationRecord
   def start_end_check
     errors.add(:end_date, 'cannot be registered before the Start date:(') unless self.start_date < self.end_date
   end
+
+  def display_created_at
+    I18n.l(self.created_at, format: :default)
+  end
+
+  def author_name
+    user.display_name
+  end
 end

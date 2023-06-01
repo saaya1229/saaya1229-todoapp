@@ -1,2 +1,9 @@
-%p= @task.title
-%p= @task.content
+.article
+  %h1.article_title= @task.title
+  .article_detail
+    = image_tag 'default-avatar.png'
+    %div
+      %p= @task.author_name
+      %p= @task.display_created_at
+  .article_content
+    = @task.content
