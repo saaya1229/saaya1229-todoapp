@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 2023_05_28_064751) do
     t.bigint "article_id", null: false
     t.string "title", null: false
     t.text "content", null: false
+    t.date "start_date", null: false
+    t.date "end_date", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"

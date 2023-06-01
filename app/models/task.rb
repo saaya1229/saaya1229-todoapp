@@ -4,6 +4,8 @@
 #
 #  id         :bigint           not null, primary key
 #  content    :text             not null
+#  end_date   :date             not null
+#  start_date :date             not null
 #  title      :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -20,4 +22,9 @@ class Task < ApplicationRecord
   belongs_to :user
   validates :title, presence: true
   validates :content, presence: true
+  validate :start_end_check
+
+  def start_end_check
+    errors.add(:end_date, 'cannot be registered before the Start date:(') unless self.start_date < self.end_date
+  end
 end

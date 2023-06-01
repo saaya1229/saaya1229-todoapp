@@ -12,4 +12,13 @@
       = f.label :title, 'Description'
     %div
       = f.text_area :content
-    = f.submit 'Submit', class: 'btn-primary'
+    %div
+      = f.label :start_date, 'Start date'
+    %div
+      = f.datetime_select :start_date
+    %div
+      = f.label :end_date, 'End date'
+    %div.end_date
+      = f.datetime_select :end_date
+    %div
+    = f.submit 'Submit', class: 'btn-task'
