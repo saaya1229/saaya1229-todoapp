@@ -13,6 +13,11 @@ $heart-size: 16px;
     font-size: 22px;
   }
 
+  &_title_task {
+    font-size: 26px;
+    padding: 16px;
+  }
+
   &_detail {
     padding-top: 10px;
     cursor: pointer;
@@ -41,4 +46,9 @@ $heart-size: 16px;
       height: $heart-size;
     }
   }
+}
+
+.task {
+  border-bottom: 1px solid;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
 }

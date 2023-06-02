@@ -1,4 +1,4 @@
-.article
+.container
   %h1.article_title= @article.title
   .article_detail
     = image_tag 'default-avatar.png'
@@ -7,3 +7,22 @@
       %p= @article.display_created_at
   .article_content
     = @article.content
+  - @tasks.each do |task|
+    = link_to article_task_path(@article.id, task.id) do
+      .card
+        .card_image
+          = image_tag 'eyecatch1.png'
+        .card_content
+          .card_title
+            = task.title
+          .card_content
+            = task.content
+          .card_comment
+            %span 23
+            = image_tag 'message-square-outline.png'
+          .card_detail
+            = image_tag 'default-avatar.png'
+  = link_to new_article_task_path(@article) do
+    .card
+      .card_content.add_card
+        %p + Add new card

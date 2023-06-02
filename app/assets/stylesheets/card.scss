@@ -24,6 +24,7 @@ $avatar-size: 32px;
     }
   }
 
+
   &_detail {
     padding-top: 12px;
     cursor: pointer;
@@ -38,6 +39,23 @@ $avatar-size: 32px;
     }
   }
 
+  &_comment {
+    display: flex;
+    justify-content: flex-end;
+    right: 24px;
+    img {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+
+    span {
+      margin-left: 8px;
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.25);
+    }
+  }
+
   &_content {
     padding: 16px 16px;
   }
@@ -47,6 +65,23 @@ $avatar-size: 32px;
     position: relative;
     overflow: hidden;
     border-radius: 10px 10px 0px 0px;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 100%;
+    }
+  }
+
+  &_image_task {
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px 10px 10px 10px;
 
     img {
       position: absolute;
