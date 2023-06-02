@@ -1,11 +1,16 @@
-.article
-  .card_image
-    = image_tag 'eyecatch1.png'
-  %h1.article_title= @task.title
-  .article_detail
-    = image_tag 'default-avatar.png'
-    %div
-      %p= @task.author_name
-      %p= @task.display_created_at
-  .article_content
-    = @task.content
+.container
+  .task
+    .card_heart.dropdown
+      = image_tag 'Combined Shape.png', class: 'dropbtn'
+      .dropdown-content.mini
+        %a{href: "#"} 編集する
+    .article_detail
+      = image_tag 'default-avatar.png'
+      %div
+        %p= @task.author_name
+        %p= @task.display_created_at
+    %h1.article_title_task= @task.title
+    .card_image_task
+      = image_tag 'eyecatch1.png'
+    .article_content
+      = @task.content
