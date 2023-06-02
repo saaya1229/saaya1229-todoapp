@@ -1,1 +1,24 @@
-%p edit page
+.container
+  %ul
+    - @task.errors.full_messages.each do |message|
+      %li= message
+
+  = form_with(model: @task, url: article_task_path(@task.article), local: true) do |f|
+    %div
+      = f.label :title, 'Name'
+    %div
+      = f.text_field :title, class: 'text'
+    %div
+      = f.label :title, 'Description'
+    %div
+      = f.text_area :content
+    %div
+      = f.label :start_date, 'Start date'
+    %div
+      = f.datetime_select :start_date
+    %div
+      = f.label :end_date, 'End date'
+    %div.end_date
+      = f.datetime_select :end_date
+    %div
+    = f.submit 'Submit', class: 'btn-task'

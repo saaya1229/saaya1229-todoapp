@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   def show
-    @task = Task.find(params[:id])
+    @article = Article.find(params[:article_id])
+    @task = @article.tasks.find(params[:id])
   end
 
   def new
@@ -16,13 +17,25 @@ class TasksController < ApplicationController
     if @task.save
       redirect_to article_path(article), notice: 'Your task is saved!! ;)'
     else
-      flash.now[:error] = 'Faild to Saved your task:('
+      flash.now[:error] = 'Faild to save your task:('
       render :new
     end
   end
 
   def edit
-    @task = Task.find(params[:id])
+    @article = Article.find(params[:article_id])
+    @task = @article.tasks.find(params[:id])
+  end
+
+  def update
+    @article = Article.find(params[:article_id])
+    @task = current_user.tasks.find(params[:id])
+    if @task.update(task_params)
+      redirect_to article_path(@article), notice: 'Your task is updated!!'
+    else
+      flash.now[:error] = 'Faild to update your task:('
+      render :edit
+    end
   end
 
   private
