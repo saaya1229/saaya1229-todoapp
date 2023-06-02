@@ -3,7 +3,8 @@
     .card_heart.dropdown
       = image_tag 'Combined Shape.png', class: 'dropbtn'
       .dropdown-content.mini
-        %a{href: "#"} 編集する
+        = link_to edit_article_task_path(id: @task.id) do
+          %p Edit
     .article_detail
       = image_tag 'default-avatar.png'
       %div
