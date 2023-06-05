@@ -13,8 +13,9 @@
   - @tasks.each do |task|
     = link_to article_task_path(@article.id, task.id) do
       .card
-        .card_image
-          = image_tag 'eyecatch1.png'
+        - if task.eyecatch.attached?
+          .card_image
+            = image_tag task.eyecatch
         .card_content
           .card_title
             = task.title

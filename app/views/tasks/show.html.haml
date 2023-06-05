@@ -12,7 +12,8 @@
         %p= @task.author_name
         %p= @task.display_created_at
     %h1.article_title_task= @task.title
-    .card_image_task
-      = image_tag 'eyecatch1.png'
+    - if @task.eyecatch.attached?
+      .card_image_task
+        = image_tag @task.eyecatch
     .article_content
       = @task.content
