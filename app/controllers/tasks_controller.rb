@@ -38,6 +38,17 @@ class TasksController < ApplicationController
     end
   end
 
+  def destroy
+    @article = Article.find(params[:article_id])
+    @task = current_user.tasks.find(params[:id])
+    if @task.destroy!
+      redirect_to article_path(@article), notice: 'Success to delete your task'
+    else
+      flash.now[:error] = 'Faild to delete your task'
+      render :show
+    end
+  end
+
   private
   def task_params
     params.require(:task).permit(:title, :content, :start_date, :end_date)
