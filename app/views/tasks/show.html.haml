@@ -17,3 +17,8 @@
         = image_tag @task.eyecatch
     .article_content
       = @task.content
+  .comment_title
+    %p Comments
+  = link_to new_article_task_comment_path(@article, @task) do
+    .btn-secondary
+      + Add a new comment
