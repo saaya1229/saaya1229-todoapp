@@ -70,3 +70,21 @@ $container-padding: 16px;
   border-bottom: 1px solid;
   border-bottom-color: rgba(0, 0, 0, 0.2);
 }
+
+.comment_title {
+  font-size: 26px;
+  margin: 16px 16px;
+}
+
+.task_comment {
+  font-size: 14px;
+  padding: 16px 0px;
+  display: flex;
+
+  img {
+    width: $avatar-size;
+    height: $avatar-size;
+    border-radius: 100%;
+    margin-right: 16px;
+  }
+}
