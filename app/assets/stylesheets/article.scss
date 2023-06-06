@@ -75,3 +75,16 @@ $container-padding: 16px;
   font-size: 26px;
   margin: 16px 16px;
 }
+
+.task_comment {
+  font-size: 14px;
+  padding: 16px 0px;
+  display: flex;
+
+  img {
+    width: $avatar-size;
+    height: $avatar-size;
+    border-radius: 100%;
+    margin-right: 16px;
+  }
+}

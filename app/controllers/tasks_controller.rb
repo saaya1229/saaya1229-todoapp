@@ -2,6 +2,8 @@ class TasksController < ApplicationController
   def show
     @article = Article.find(params[:article_id])
     @task = @article.tasks.find(params[:id])
+
+    @comments = @task.comments
   end
 
   def new
