@@ -18,7 +18,5 @@ class Comment < ApplicationRecord
   belongs_to :task
   belongs_to :user
 
-  has_one :profile, dependent: :destroy
-
   validates :content, presence: true
 end

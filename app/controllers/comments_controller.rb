@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @article = Article.find(params[:article_id])
     @task = @article.tasks.find(params[:task_id])
