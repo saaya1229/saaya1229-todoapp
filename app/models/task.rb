@@ -25,6 +25,8 @@ class Task < ApplicationRecord
 
   has_many :comments, dependent: :destroy
 
+  has_one :profile, dependent: :destroy
+
   validates :title, presence: true
   validates :content, presence: true
   validate :start_end_check

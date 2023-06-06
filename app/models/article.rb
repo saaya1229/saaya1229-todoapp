@@ -27,6 +27,7 @@ class Article < ApplicationRecord
 
   belongs_to :user
   has_many :tasks, dependent: :destroy
+  has_one :profile, dependent: :destroy
 
   def display_created_at
     I18n.l(self.created_at, format: :default)
