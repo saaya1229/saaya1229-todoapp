@@ -1,1 +1,26 @@
-Edit
+.container
+  %ul
+    - @profile.errors.full_messages.each do |message|
+      %li= message
+  = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
+    %div
+      = f.label :nickname, 'Handle Name'
+    %div
+      = f.text_field :nickname, class: 'text'
+    %div 
+      = f.label :introduction, 'Self Introduction'
+    %div 
+      = f.text_area :introduction
+    %div
+      = f.label :gender, 'Gender'
+    %div 
+      = f.select :gender, Profile.genders.keys, {}, { class: 'text' }
+    %div 
+      = f.label :birthday, 'Birthday'
+    %div 
+      = f.date_field :birthday, class: 'text'
+    %div 
+      = f.label :subscribed, 'Allow Notifications'
+      = f.check_box :subscribed
+    %div
+      = f.submit 'Submit', class: 'btn-task'

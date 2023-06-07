@@ -7,6 +7,9 @@ $image_size: 56px;
 
   &_user {
     display: flex;
+    padding: 0px 0px 32px 0px;
+    border-bottom: 1px solid;
+    border-bottom-color: rgba(0, 0, 0, 0.2);
 
     &_image {
       display: flex;
