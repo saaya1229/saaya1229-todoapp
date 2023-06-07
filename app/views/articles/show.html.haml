@@ -4,7 +4,7 @@
       =image_tag @article.eyecatch
   %h1.article_title= @article.title
   .article_detail
-    = image_tag 'default-avatar.png'
+    = image_tag @article.user.avatar_image
     %div
       %p= @article.author_name
       %p= @article.display_created_at
@@ -25,7 +25,7 @@
             %span 23
             = image_tag 'message-square-outline.png'
           .card_detail
-            = image_tag 'default-avatar.png'
+            = image_tag task.user.avatar_image
   = link_to new_article_task_path(@article) do
     .card
       .card_content.add_card
