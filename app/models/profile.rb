@@ -19,6 +19,7 @@
 class Profile < ApplicationRecord
   enum gender: { male: 0, female: 1, other: 2 }
   belongs_to :user
+  has_one_attached :avatar
 
   def age
     return 'unknown' unless birthday.present?
@@ -26,9 +27,9 @@ class Profile < ApplicationRecord
     days = Time.zone.now.yday - birthday.yday
 
     if days < 0
-      "#{years - 1} years old"
+      years - 1
     else
-      "#{years} years old"
+      years
     end
   end
 end
